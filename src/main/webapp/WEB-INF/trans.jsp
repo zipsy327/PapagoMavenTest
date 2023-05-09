@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,23 +21,23 @@
 </head>
 <body>
 <h3><b>Naver Cloud Papago 번역기</b></h3>
-<textarea style="width: 400px;height: 150px;" id="content"
+<textarea style="width: 100%;height: 150px;" id="content"
 class="form-control">우리 다같이 바다보러 갈까요?</textarea>
 <br>
 <button type="button" class="btntrans" lang="en">영어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
 <button type="button" class="btntrans" lang="ja">일어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
 <button type="button" class="btntrans" lang="fr">프랑스로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
 <button type="button" class="btntrans" lang="zh-CN">중국어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
 <button type="button" class="btntrans" lang="de">독일어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 
 <script type="text/javascript">
 	$(".btntrans").click(function(){
