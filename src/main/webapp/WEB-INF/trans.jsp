@@ -21,71 +21,43 @@
 <body>
 <h3><b>Naver Cloud Papago 번역기</b></h3>
 <textarea style="width: 400px;height: 150px;" id="content"
-class="form-control">저는 비트캠프의 우수한 강사입니다</textarea>
+class="form-control">우리 다같이 바다보러 갈까요?</textarea>
 <br>
-<button type="button" id="btntrans">영어로 번역하기</button>
-<div class="engtrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<button type="button" class="btntrans" lang="en">영어로 번역하기</button>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<br>
+<button type="button" class="btntrans" lang="ja">일어로 번역하기</button>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<br>
+<button type="button" class="btntrans" lang="fr">프랑스로 번역하기</button>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<br>
+<button type="button" class="btntrans" lang="zh-CN">중국어로 번역하기</button>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<br>
+<button type="button" class="btntrans" lang="de">독일어로 번역하기</button>
+<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+
 <script type="text/javascript">
-	$("#btntrans").click(function(){
+	$(".btntrans").click(function(){
+		let lang=$(this).attr("lang");
+		let texttrans=$(this).next();
 		$.ajax({
 			type:"post",
 			url:"./trans",
-			data:{"message":$("#content").val()},
+			data:{"message":$("#content").val(),"lang":lang},
 			dataType:"text",
 			success:function(res){
-				alert(res);
+				//alert(res);
 				let m=JSON.parse(res);
 				console.log(m);
 				console.log(typeof(m));
 				console.log(m.message.result.translatedText);
-				$("div.engtrans").html(m.message.result.translatedText);
+				$(texttrans).html(m.message.result.translatedText);
 			}
 		});
 	});
 </script>
 
-<br>
-<button type="button" id="btntrans2">일어로 번역하기</button>
-<div class="jptrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
-<script type="text/javascript">
-	$("#btntrans2").click(function(){
-		$.ajax({
-			type:"post",
-			url:"./jptrans",
-			data:{"message":$("#content").val()},
-			dataType:"text",
-			success:function(res){
-				alert(res);
-				let m=JSON.parse(res);
-				console.log(m);
-				console.log(typeof(m));
-				console.log(m.message.result.translatedText);
-				$("div.jptrans").html(m.message.result.translatedText);
-			}
-		});
-	});
-</script>
-
-<br>
-<button type="button" id="btntrans3">프랑스어로 번역하기</button>
-<div class="frtrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
-<script type="text/javascript">
-	$("#btntrans3").click(function(){
-		$.ajax({
-			type:"post",
-			url:"./frtrans",
-			data:{"message":$("#content").val()},
-			dataType:"text",
-			success:function(res){
-				alert(res);
-				let m=JSON.parse(res);
-				console.log(m);
-				console.log(typeof(m));
-				console.log(m.message.result.translatedText);
-				$("div.frtrans").html(m.message.result.translatedText);
-			}
-		});
-	});
-</script>
 </body>
 </html>
