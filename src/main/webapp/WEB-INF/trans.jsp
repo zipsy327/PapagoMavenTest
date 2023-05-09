@@ -43,5 +43,49 @@ class="form-control">저는 비트캠프의 우수한 강사입니다</textarea>
 		});
 	});
 </script>
+
+<br>
+<button type="button" id="btntrans2">일어로 번역하기</button>
+<div class="jptrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<script type="text/javascript">
+	$("#btntrans2").click(function(){
+		$.ajax({
+			type:"post",
+			url:"./jptrans",
+			data:{"message":$("#content").val()},
+			dataType:"text",
+			success:function(res){
+				alert(res);
+				let m=JSON.parse(res);
+				console.log(m);
+				console.log(typeof(m));
+				console.log(m.message.result.translatedText);
+				$("div.jptrans").html(m.message.result.translatedText);
+			}
+		});
+	});
+</script>
+
+<br>
+<button type="button" id="btntrans3">프랑스어로 번역하기</button>
+<div class="frtrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
+<script type="text/javascript">
+	$("#btntrans3").click(function(){
+		$.ajax({
+			type:"post",
+			url:"./frtrans",
+			data:{"message":$("#content").val()},
+			dataType:"text",
+			success:function(res){
+				alert(res);
+				let m=JSON.parse(res);
+				console.log(m);
+				console.log(typeof(m));
+				console.log(m.message.result.translatedText);
+				$("div.frtrans").html(m.message.result.translatedText);
+			}
+		});
+	});
+</script>
 </body>
 </html>
