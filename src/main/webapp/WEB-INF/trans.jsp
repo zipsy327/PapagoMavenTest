@@ -21,7 +21,7 @@
 <body>
 <h3><b>Naver Cloud Papago 번역기</b></h3>
 <textarea style="width: 400px;height: 150px;" id="content"
-class="form-control"></textarea>
+class="form-control">저는 비트캠프의 우수한 강사입니다</textarea>
 <br>
 <button type="button" id="btntrans">영어로 번역하기</button>
 <div class="engtrans"  style="margin-top: 20px;font-size: 20px;width: 400px;"></div>
