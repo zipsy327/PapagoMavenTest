@@ -29,8 +29,12 @@ $(function(){
 		let lang=$(this).attr("lang");		
 		console.log(lang);
 		//https://api.ncloud-docs.com/docs/ai-naver-papagonmt-translation
-		if(lang=='en'||lang=='ja'||lang=='zh-CN'|lang=='es'){
-			let text=$(this).prev().prev().text();
+		if(lang=='en'||lang=='ja'||lang=='zh-CN'|lang=='es'||lang=='ko'){
+			let text="";
+			if(lang=='ko')
+				text=$("#content").val();
+			else
+				text=$(this).prev().prev().text();
 			$.ajax({
 				type:"get",
 				url:"./voice",
@@ -55,7 +59,9 @@ $(function(){
 	<b style="background-color: pink;color:blue;font-size: 20px;font-family: 'Gamja Flower'">pipeline 배포 연습-Github webhook연동</b>
 	<textarea style="width: 100%;height: 150px;" id="content"
 	class="form-control">우리 다같이 바다보러 갈까요?</textarea>
-	<br>
+	<i class="bi bi-megaphone speak" lang="ko"  style='font-size:16px;color:red;'></i>
+	<span style='font-size:16px;'>한국어로 듣기</span>
+	<br><br>
 	<button type="button" class="btntrans btn btn-outline-danger" lang="en">영어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 
@@ -89,7 +95,7 @@ $(function(){
 				console.log(m.message.result.translatedText);
 				$(texttrans).html(`<span>\${m.message.result.translatedText}</span>
 						<br><i class="bi bi-megaphone speak" 
-						lang=\${lang}></i>&nbsp;<sapn style='font-size:14px'>스피커를 클릭하면 음성으로 읽어드립니다</span>`);
+						lang=\${lang}></i>&nbsp;<span style='font-size:14px'>스피커를 클릭하면 음성으로 읽어드립니다</span>`);
 			
 			}
 		});

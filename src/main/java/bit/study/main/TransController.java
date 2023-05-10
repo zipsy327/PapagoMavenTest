@@ -89,7 +89,7 @@ public class TransController {
             // post request
             //목소리, 언어 선택
             //https://api.ncloud-docs.com/docs/ai-naver-clovavoice-ttspremium 참조
-            String selectVoice="jinho";
+            String selectVoice="njiyun";// 한국어 목소리
             if(lang.equals("en"))
             	selectVoice="djoey";
             else if(lang.equals("ja"))
