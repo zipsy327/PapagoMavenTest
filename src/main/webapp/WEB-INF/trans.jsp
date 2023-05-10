@@ -13,7 +13,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
- <script src="https://voice.luzspat.com/js/cloudvoice.js"></script>
 <style>
 	body, body *{
 		font-family: 'Jua'
@@ -25,17 +24,6 @@
 </style>
 <script type="text/javascript">
 $(function(){
-	/* $(document).on("click",".speak",function(){
-		let lang=$(this).attr("lang");		
-		console.log(lang);
-		if(lang=='zh-CN'){
-			alert("중국어 음성 오류 발생!!");
-			return;
-		}
-		let text=$(this).prev().prev().text();
-		console.log(text);
-		talk(lang,text);
-	});	 */
 	
 	$(document).on("click",".speak",function(){
 		let lang=$(this).attr("lang");		
