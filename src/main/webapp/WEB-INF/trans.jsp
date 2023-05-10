@@ -13,11 +13,31 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+ <script src="https://voice.luzspat.com/js/cloudvoice.js"></script>
 <style>
 	body, body *{
 		font-family: 'Jua'
 	}
+	
+	.speak{
+		 cursor: pointer;
+	}
 </style>
+<script type="text/javascript">
+$(function(){
+	$(document).on("click",".speak",function(){
+		let lang=$(this).attr("lang");		
+		console.log(lang);
+		if(lang=='zh-CN'){
+			alert("중국어 음성 오류 발생!!");
+			return;
+		}
+		let text=$(this).prev().prev().text();
+		console.log(text);
+		talk(lang,text);
+	});	
+});
+</script>
 </head>
 <body>
 <div style="margin-left: 20px;">
@@ -28,6 +48,7 @@
 	<br>
 	<button type="button" class="btntrans btn btn-outline-danger" lang="en">영어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+
 	<br>
 	<button type="button" class="btntrans btn btn-outline-info" lang="ja">일어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
@@ -56,7 +77,10 @@
 				console.log(m);
 				console.log(typeof(m));
 				console.log(m.message.result.translatedText);
-				$(texttrans).html(m.message.result.translatedText);
+				$(texttrans).html(`<span>\${m.message.result.translatedText}</span>
+						<br><i class="bi bi-megaphone speak" 
+						lang=\${lang}></i>&nbsp;<sapn style='font-size:14px'>스피커를 클릭하면 음성으로 읽어드립니다</span>`);
+			
 			}
 		});
 	});
