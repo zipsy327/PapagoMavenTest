@@ -59,19 +59,6 @@ $(function(){
 		}		
 	});	
 });
-
-function delvoice(filename)
-{
-	$.ajax({
-		type:"get",
-		url:"./delvoice",
-		data:{"filename":filename},
-		dataType:"text",
-		success:function(res){
-			alert("소리 파일 삭제");
-		}
-	});
-}
 </script>
 </head>
 <body>
