@@ -20,26 +20,27 @@
 </style>
 </head>
 <body>
-<h3><b>Naver Cloud Papago 번역기</b></h3>
-<b style="background-color: pink;color:blue;margin-left: 30px;font-size: 20px">pipeline 배포 연습-Github webhook연동</b>
-<textarea style="width: 100%;height: 150px;" id="content"
-class="form-control">우리 다같이 바다보러 갈까요?</textarea>
-<br>
-<button type="button" class="btntrans btn btn-outline-danger" lang="en">영어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-<br>
-<button type="button" class="btntrans btn btn-outline-info" lang="ja">일어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-<br>
-<button type="button" class="btntrans btn btn-outline-success" lang="fr">프랑스로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-<br>
-<button type="button" class="btntrans btn btn-outline-secondary" lang="zh-CN">중국어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-<br>
-<button type="button" class="btntrans btn btn-outline-primary" lang="de">독일어로 번역하기</button>
-<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-
+<div style="margin-left: 20px;">
+	<h3><b>Naver Cloud Papago 번역기</b></h3>
+	<b style="background-color: pink;color:blue;font-size: 20px;font-family: 'Gamja Flower'">pipeline 배포 연습-Github webhook연동</b>
+	<textarea style="width: 100%;height: 150px;" id="content"
+	class="form-control">우리 다같이 바다보러 갈까요?</textarea>
+	<br>
+	<button type="button" class="btntrans btn btn-outline-danger" lang="en">영어로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+	<br>
+	<button type="button" class="btntrans btn btn-outline-info" lang="ja">일어로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+	<br>
+	<button type="button" class="btntrans btn btn-outline-success" lang="fr">프랑스로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+	<br>
+	<button type="button" class="btntrans btn btn-outline-secondary" lang="zh-CN">중국어로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+	<br>
+	<button type="button" class="btntrans btn btn-outline-primary" lang="de">독일어로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+</div>
 <script type="text/javascript">
 	$(".btntrans").click(function(){
 		let lang=$(this).attr("lang");
