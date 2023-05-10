@@ -24,19 +24,19 @@
 <textarea style="width: 100%;height: 150px;" id="content"
 class="form-control">우리 다같이 바다보러 갈까요?</textarea>
 <br>
-<button type="button" class="btntrans" lang="en">영어로 번역하기</button>
+<button type="button" class="btntrans btn btn-outline-danger" lang="en">영어로 번역하기</button>
 <div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
-<button type="button" class="btntrans" lang="ja">일어로 번역하기</button>
+<button type="button" class="btntrans btn-outline-info" lang="ja">일어로 번역하기</button>
 <div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
-<button type="button" class="btntrans" lang="fr">프랑스로 번역하기</button>
+<button type="button" class="btntrans btn-outline-success" lang="fr">프랑스로 번역하기</button>
 <div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
-<button type="button" class="btntrans" lang="zh-CN">중국어로 번역하기</button>
+<button type="button" class="btntrans btn-outline-secondary" lang="zh-CN">중국어로 번역하기</button>
 <div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 <br>
-<button type="button" class="btntrans" lang="de">독일어로 번역하기</button>
+<button type="button" class="btntrans btn-outline-primary" lang="de">독일어로 번역하기</button>
 <div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 
 <script type="text/javascript">
