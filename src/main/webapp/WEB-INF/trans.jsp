@@ -25,7 +25,7 @@
 </style>
 <script type="text/javascript">
 $(function(){
-	$(document).on("click",".speak",function(){
+	/* $(document).on("click",".speak",function(){
 		let lang=$(this).attr("lang");		
 		console.log(lang);
 		if(lang=='zh-CN'){
@@ -35,8 +35,43 @@ $(function(){
 		let text=$(this).prev().prev().text();
 		console.log(text);
 		talk(lang,text);
+	});	 */
+	
+	$(document).on("click",".speak",function(){
+		let lang=$(this).attr("lang");		
+		console.log(lang);
+		//https://api.ncloud-docs.com/docs/ai-naver-papagonmt-translation
+		if(lang=='en'||lang=='ja'||lang=='zh-CN'|lang=='es'){
+			let text=$(this).prev().prev().text();
+			$.ajax({
+				type:"get",
+				url:"./voice",
+				data:{"message":text,"lang":lang},
+				dataType:"text",
+				success:function(res){
+					//alert(res);
+					let audio=new Audio(res);
+					audio.play();					
+				}
+			});
+		}else{
+			alert("현재 영어,일어,중국어,스페인어만 목소리를 지원하고 잇습니다");
+		}		
 	});	
 });
+
+function delvoice(filename)
+{
+	$.ajax({
+		type:"get",
+		url:"./delvoice",
+		data:{"filename":filename},
+		dataType:"text",
+		success:function(res){
+			alert("소리 파일 삭제");
+		}
+	});
+}
 </script>
 </head>
 <body>
@@ -53,12 +88,12 @@ $(function(){
 	<button type="button" class="btntrans btn btn-outline-info" lang="ja">일어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 	<br>
-	<button type="button" class="btntrans btn btn-outline-success" lang="fr">프랑스로 번역하기</button>
-	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
-	<br>
 	<button type="button" class="btntrans btn btn-outline-secondary" lang="zh-CN">중국어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 	<br>
+	<button type="button" class="btntrans btn btn-outline-success" lang="es">스페인어로 번역하기</button>
+	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
+	<br>	
 	<button type="button" class="btntrans btn btn-outline-primary" lang="de">독일어로 번역하기</button>
 	<div class="texttrans"  style="margin-top: 20px;font-size: 20px;width: 100%;"></div>
 </div>
