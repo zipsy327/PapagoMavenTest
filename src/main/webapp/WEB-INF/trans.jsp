@@ -21,7 +21,7 @@
 </head>
 <body>
 <h3><b>Naver Cloud Papago 번역기</b></h3>
-<h5>pipeline 배포 연습</h5>
+<b style="background-color: pink;color:blue;margin-left: 30px;font-size: 20px">pipeline 배포 연습</b>
 <textarea style="width: 100%;height: 150px;" id="content"
 class="form-control">우리 다같이 바다보러 갈까요?</textarea>
 <br>
