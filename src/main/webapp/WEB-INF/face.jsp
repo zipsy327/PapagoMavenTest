@@ -45,10 +45,11 @@ $("#upload").change(function(){
 			data:form,
 			processData:false,
 			contentType:false,
-			success:function(res){  	
+			success:function(res){  
+				alert(res);
 				if(res==null)
 					return false;
-				//alert(res);
+				
 				$("#photo").attr("src",res.photo);
 				let jdata=res.jdata;
 				//$(".jdata").text(jdata);
