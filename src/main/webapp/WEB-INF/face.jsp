@@ -24,7 +24,7 @@
 <div>
 <h2><b>Naver Clova Face Recognition(얼굴인식)</b></h2>
 <br>
-<h5><b>얼굴이 많이 포함된 사진으로 업로드해주세요</b></h5>
+<h5><b>얼굴이 많이 포함된 사진으로 업로드해주세요(2MB이내)</b></h5>
 <input type="file" id="upload" class="form-conntrol">
 <br>
 <div class="jdata" style="width: 100%;"></div>
@@ -72,7 +72,13 @@ $("#upload").change(function(){
 				});				
 				
 				$("#photoinfo").html(s);				
-			}
+			},
+			statusCode: {
+			    400: function() {
+			      alert("사진 사이즈는 2MB 이내로 선택!");
+			    }
+			  }
+			
 		});
 		
 		a.fail(function(){
