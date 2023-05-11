@@ -1,11 +1,9 @@
 package bit.study.main;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 //네이버 Papago Text Translation API 예제
 import java.io.BufferedReader;
@@ -153,13 +151,13 @@ public class TransController {
 		{
 			System.out.println(fn);
 			File f=new File(uploadPath+"/"+fn);
-			if(fn.endsWith("mp3"))
-			{
+			//if(fn.endsWith("mp3"))
+			//{
 				if(f.exists()) {
 					System.out.println(fn+" 파일 삭제");
 					f.delete();
 				}
-			}			
+			//}			
 		}
 	}
 	
