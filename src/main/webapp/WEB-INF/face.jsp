@@ -29,7 +29,7 @@
 <br>
 <div class="jdata" style="width: 100%;"></div>
 <h6><b>원본 이미지</b></h6>
-<img src="" id="photo"  style="max-width: 400px;">
+<img src="" id="photo"  style="max-width:90%;">
 <div id="photoinfo" style="margin-left: 5px;font-size: 15px;width:300px;"></div>
 
 <script type="text/javascript">
