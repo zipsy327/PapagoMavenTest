@@ -38,7 +38,7 @@ $("#upload").change(function(){
 		let form=new FormData();
 		form.append("upload",$("#upload")[0].files[0]);//선택한 1개의 파일만 업로드
 		
-		$.ajax({
+		let a=$.ajax({
 			type:"post",
 			dataType:"json",
 			url:"./facerec",
@@ -46,7 +46,7 @@ $("#upload").change(function(){
 			processData:false,
 			contentType:false,
 			success:function(res){  
-				alert(res);
+				//alert(res);
 				if(res==null)
 					return false;
 				
@@ -69,10 +69,14 @@ $("#upload").change(function(){
 						성별 : \${ele.gender.value}<br>
 						<hr>
 						`
-				});
-				$("#photoinfo").html(s);
+				});				
 				
+				$("#photoinfo").html(s);				
 			}
+		});
+		
+		a.fail(function(){
+			alert("알수 없는 오류!!");
 		});
 	});
 </script>
