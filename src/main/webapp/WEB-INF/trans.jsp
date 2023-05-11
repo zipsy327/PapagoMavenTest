@@ -54,6 +54,8 @@ $(function(){
 </script>
 </head>
 <body>
+<a href="./face" style="font-size: 1.5em">얼굴인식페이지로 이동</a>
+
 <div style="margin-left: 20px;">
 	<h3><b>Naver Cloud Papago 번역기</b></h3>
 	<b style="background-color: pink;color:blue;font-size: 20px;font-family: 'Gamja Flower'">pipeline 배포 연습-Github webhook연동</b>
